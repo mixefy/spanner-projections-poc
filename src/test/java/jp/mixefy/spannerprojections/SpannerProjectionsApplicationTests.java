@@ -103,7 +103,7 @@ class SpannerProjectionsApplicationTests {
         var saved = accountRepository.save(account);
 
         var retrieved = accountRepository.findById(saved.getId()).get();
-        assertEquals("Yamada", retrieved.getName());
+        assertEquals("Not Yamada", retrieved.getName());
 
         var retrievedProjection = accountRepository.findProjectionById(saved.getId());
         assertEquals("Yamada", retrievedProjection.getName());
